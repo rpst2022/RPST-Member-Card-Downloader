@@ -11,12 +11,13 @@ body {
   padding: 2rem;
   background: white;
   border-radius: 10px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
   text-align: center;
   margin-bottom: 20px;
+  font-size: 2rem;
 }
 
 input[type="text"] {
@@ -26,11 +27,13 @@ input[type="text"] {
   margin-bottom: 20px;
   border-radius: 6px;
   border: 1px solid #ccc;
+  box-sizing: border-box;
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
+  margin-bottom: 20px;
 }
 
 table thead {
@@ -38,7 +41,8 @@ table thead {
   color: white;
 }
 
-table th, table td {
+table th,
+table td {
   padding: 12px;
   text-align: left;
   border-bottom: 1px solid #ddd;
@@ -53,8 +57,86 @@ table th, table td {
   text-decoration: none;
   cursor: pointer;
   font-size: 14px;
+  transition: background-color 0.3s ease;
 }
 
 .download-btn:hover {
   background-color: #218838;
+}
+
+.download-btn:disabled {
+  background-color: #308300;
+  cursor: not-allowed;
+}
+
+.download-btn.missing {
+  background-color: #dc3545; /* Bootstrap-style red */
+  color: white;
+  cursor: not-allowed;
+}
+
+.download-btn.missing:hover {
+  background-color: #c82333;
+}
+
+.footer-copyright {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.75rem;
+  opacity: 0.8;
+}
+
+/* Responsive layout for small screens */
+@media (max-width: 768px) {
+  .container {
+    margin: 20px;
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+  }
+
+  thead {
+    display: none;
+  }
+
+  tr {
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    background: #fefefe;
+  }
+
+  td {
+    padding: 10px;
+    position: relative;
+  }
+
+  td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #666;
+  }
+
+  table th,
+  table td {
+
+    text-align: right;
+
+  }
 }
