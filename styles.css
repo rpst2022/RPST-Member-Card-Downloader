@@ -61,22 +61,12 @@ table td {
 }
 
 .download-btn:hover {
-  background-color: #218838;
+  background-color: #16852e;
 }
 
 .download-btn:disabled {
-  background-color: #308300;
+  background-color: #ff0000;
   cursor: not-allowed;
-}
-
-.download-btn.missing {
-  background-color: #dc3545; /* Bootstrap-style red */
-  color: white;
-  cursor: not-allowed;
-}
-
-.download-btn.missing:hover {
-  background-color: #c82333;
 }
 
 .footer-copyright {
@@ -87,7 +77,7 @@ table td {
 }
 
 /* Responsive layout for small screens */
-@media (max-width: 768px) {
+@media (max-width: 450px) {
   .container {
     margin: 20px;
     padding: 1rem;
